@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 80">
+  <!-- WL Monogram - using Georgia as reliable serif fallback -->
+  <text x="0" y="56" font-family="Georgia, 'Times New Roman', serif" font-size="52" fill="#1B2A4A" letter-spacing="-2" font-style="normal">WL</text>
+  
+  <!-- Divider -->
+  <line x1="82" y1="16" x2="82" y2="60" stroke="#d4d0c8" stroke-width="1.5"/>
+  
+  <!-- Wordmark -->
+  <text x="96" y="38" font-family="Helvetica, Arial, sans-serif" font-size="16" font-weight="500" fill="#1B2A4A" letter-spacing="3">WARDWELL</text>
+  <text x="96" y="58" font-family="Helvetica, Arial, sans-serif" font-size="16" font-weight="500" fill="#6b7280" letter-spacing="3">LABS</text>
+</svg>
