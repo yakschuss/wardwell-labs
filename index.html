@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Wardwell Labs — Custom Software & Consulting</title>
 <meta name="description" content="Wardwell Labs builds custom software platforms for businesses that depend on them. Based in New York.">
-<link rel="icon" type="image/png" href="/wardwell-labs-logo-sm.png">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700&family=DM+Serif+Display&display=swap" rel="stylesheet">
 <style>
@@ -82,41 +82,124 @@
     animation: rise 0.8s ease 0.45s forwards;
   }
 
-  .services {
+  .lead a {
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px solid var(--rule);
+    transition: border-color 0.2s ease;
+  }
+
+  .lead a:hover {
+    border-bottom-color: var(--accent);
+  }
+
+  .work {
     opacity: 0;
     animation: rise 0.8s ease 0.5s forwards;
   }
 
-  .services h2 {
+  .work h2 {
     font-family: 'DM Sans', sans-serif;
     font-size: 11px;
     font-weight: 700;
     letter-spacing: 0.12em;
     text-transform: uppercase;
     color: var(--stone);
-    margin-bottom: 24px;
+    margin-bottom: 28px;
   }
 
-  .service-list {
+  .work-list {
     list-style: none;
   }
 
-  .service-list li {
-    font-size: 17px;
-    line-height: 1.5;
-    padding: 14px 0;
+  .work-item {
+    display: block;
+    text-decoration: none;
+    padding: 20px 0;
     border-bottom: 1px solid var(--rule);
-    color: var(--ink);
+    transition: padding-left 0.2s ease;
   }
 
-  .service-list li:first-child {
+  .work-item:first-child {
     border-top: 1px solid var(--rule);
+  }
+
+  .work-item:hover {
+    padding-left: 8px;
+  }
+
+  .work-item:hover .work-name {
+    color: var(--accent);
+  }
+
+  .work-item:hover .arrow {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .work-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+
+  .work-name {
+    font-family: 'DM Serif Display', serif;
+    font-size: 20px;
+    font-weight: 400;
+    color: var(--ink);
+    transition: color 0.2s ease;
+  }
+
+  .work-domain {
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+    font-size: 14px;
+    color: var(--accent);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-color: var(--rule);
+  }
+
+  .work-item:hover .work-domain {
+    text-decoration-color: var(--accent);
+  }
+
+  .arrow {
+    opacity: 0;
+    transform: translateX(-4px);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    font-size: 13px;
+  }
+
+  .work-desc {
+    font-size: 15px;
+    line-height: 1.5;
+    color: var(--stone);
+    margin-top: 6px;
+  }
+
+  .case-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--stone);
+    margin-top: 12px;
+  }
+
+  .case-text {
+    font-size: 15px;
+    line-height: 1.7;
+    color: var(--stone);
+    margin-top: 2px;
   }
 
   .contact {
     margin-top: 56px;
     opacity: 0;
-    animation: rise 0.8s ease 0.65s forwards;
+    animation: rise 0.8s ease 0.7s forwards;
   }
 
   .contact h2 {
@@ -141,12 +224,22 @@
     border-bottom-color: var(--accent);
   }
 
+  .schedule-link {
+    margin-top: 10px;
+    font-size: 15px;
+    color: var(--stone);
+  }
+
+  .schedule-link a {
+    font-size: 15px;
+  }
+
   .footer {
     margin-top: 80px;
     font-size: 13px;
     color: var(--stone);
     opacity: 0;
-    animation: rise 0.8s ease 0.8s forwards;
+    animation: rise 0.8s ease 0.85s forwards;
   }
 
   @keyframes rise {
@@ -175,26 +268,59 @@
     </p>
 
     <p class="lead">
-      Founded by a staff engineer with 10+ years in healthcare technology, 
-      we bring production-grade thinking to every engagement.
+      Founded by <a href="https://jackschuss.com">Jack Schuss</a>, a staff engineer
+      with over a decade of experience building software products. We bring
+      production-grade thinking to every engagement.
     </p>
 
     <div class="divider"></div>
 
-    <div class="services">
-      <h2>What We Do</h2>
-      <ul class="service-list">
-        <li>Custom platform development</li>
-        <li>Legacy system modernization</li>
-        <li>API design & third-party integrations</li>
-        <li>Data migration & infrastructure</li>
-        <li>Ongoing maintenance & support</li>
-      </ul>
+    <div class="work">
+      <h2>Selected Work</h2>
+      <div class="work-list">
+        <a class="work-item" href="https://shulops.com" target="_blank">
+          <div class="work-header">
+            <span class="work-name">ShulOps</span>
+            <span class="work-domain">shulops.com <span class="arrow">&rarr;</span></span>
+          </div>
+          <p class="case-label">Problem</p>
+          <p class="case-text">Shuls run on volunteers, and volunteers burn out. Event details come in on WhatsApp, dues are tracked in someone's head, and the weekly flyer takes an hour every Thursday.</p>
+          <p class="case-label">What we built</p>
+          <p class="case-text">An AI layer that watches all of it — ingests the messages, keeps the data straight, and drafts the announcements before anyone has to ask.</p>
+          <p class="case-label">Result</p>
+          <p class="case-text">Takes five minutes to set up and runs every day — nothing falls through the cracks.</p>
+        </a>
+        <a class="work-item" href="https://keepsight.io" target="_blank">
+          <div class="work-header">
+            <span class="work-name">KeepSight</span>
+            <span class="work-domain">keepsight.io <span class="arrow">&rarr;</span></span>
+          </div>
+          <p class="case-label">Problem</p>
+          <p class="case-text">Small ABA practices were losing almost half their leads during intake — not because they didn't care, but because nobody could see what was falling behind. Clinical software handles billing, not coordination.</p>
+          <p class="case-label">What we built</p>
+          <p class="case-text">The coordination layer. Intake tracking, caseload visibility, flags for anything going stale.</p>
+          <p class="case-label">Result</p>
+          <p class="case-text">First clinic was up in a week with staff capacity and lead drop-off visible for the first time.</p>
+        </a>
+        <a class="work-item" href="https://wardwell.dev" target="_blank">
+          <div class="work-header">
+            <span class="work-name">Wardwell</span>
+            <span class="work-domain">wardwell.dev <span class="arrow">&rarr;</span></span>
+          </div>
+          <p class="case-label">Problem</p>
+          <p class="case-text">AI coding tools start from scratch every session. No memory of what you decided last week, what broke, or why you chose one approach over another.</p>
+          <p class="case-label">What we built</p>
+          <p class="case-text">A memory layer — a Rust CLI that stores decisions, history, and project state in plain text, and loads it all back in automatically.</p>
+          <p class="case-label">Result</p>
+          <p class="case-text">Source-available under the Business Source License, and every session picks up where the last one left off.</p>
+        </a>
+      </div>
     </div>
 
     <div class="contact">
       <h2>Get in Touch</h2>
       <a href="mailto:jack@wardwell-labs.com">jack@wardwell-labs.com</a>
+      <p class="schedule-link">or <a href="https://cal.com/jackschuss/wardwell-labs-intro" target="_blank">book a time directly</a></p>
     </div>
 
     <div class="footer">
