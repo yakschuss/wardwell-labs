@@ -3,329 +3,330 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Wardwell Labs — Custom Software & Consulting</title>
+<title>Wardwell Labs — Custom Software &amp; Consulting</title>
 <meta name="description" content="Wardwell Labs builds custom software platforms for businesses that depend on them. Based in New York.">
+<meta property="og:title" content="Wardwell Labs">
+<meta property="og:description" content="Custom software platforms for businesses that depend on them. Based in New York.">
+<meta property="og:url" content="https://wardwell-labs.com">
+<meta property="og:type" content="website">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700&family=DM+Serif+Display&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400;1,6..72,500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root {
-    --ink: #0a0f1a;
-    --paper: #f8f7f4;
-    --stone: #6b7280;
-    --accent: #1a3a5c;
-    --rule: #d4d0c8;
-    --warm: #e8e4dc;
+    --paper: #f7f5f0;
+    --ink: #211e19;
+    --stone: #6e675a;
+    --navy: #1b2a4a;
+    --rule: #ddd7ca;
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
 
   body {
-    font-family: 'DM Sans', sans-serif;
+    font-family: 'Newsreader', Georgia, serif;
+    font-size: 18px;
     background: var(--paper);
     color: var(--ink);
     -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
   }
 
+  ::selection { background: var(--navy); color: var(--paper); }
+
+  .mono { font-family: 'IBM Plex Mono', monospace; }
+
   .page {
-    max-width: 720px;
+    max-width: 680px;
     margin: 0 auto;
-    padding: 80px 24px 120px;
+    padding: 96px 24px;
   }
 
   @media (min-width: 640px) {
-    .page { padding: 120px 24px 160px; }
+    .page { padding: 128px 24px 120px; }
   }
 
-  .mark {
-    margin-bottom: 64px;
-    opacity: 0;
-    animation: rise 0.8s ease forwards;
+  @media (prefers-reduced-motion: no-preference) {
+    .page {
+      animation: rise 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+    }
   }
+
+  @keyframes rise {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .mark { margin-bottom: 64px; }
 
   .mark svg {
-    height: 48px;
+    height: 44px;
     width: auto;
     display: block;
   }
 
-  @media (min-width: 640px) {
-    .mark svg { height: 56px; }
+  h1 {
+    font-size: clamp(34px, 5vw, 50px);
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    line-height: 1.15;
+    max-width: 18ch;
   }
 
-  h1 {
-    font-family: 'DM Serif Display', serif;
-    font-size: clamp(32px, 5vw, 48px);
-    line-height: 1.2;
-    font-weight: 400;
-    color: var(--ink);
-    margin-bottom: 40px;
-    opacity: 0;
-    animation: rise 0.8s ease 0.15s forwards;
-  }
+  h1 em { font-style: italic; font-weight: 400; }
 
   .lead {
+    margin-top: 28px;
     font-size: 18px;
-    line-height: 1.7;
+    line-height: 1.65;
     color: var(--stone);
-    margin-bottom: 24px;
-    opacity: 0;
-    animation: rise 0.8s ease 0.3s forwards;
+    max-width: 56ch;
   }
 
-  .divider {
-    width: 48px;
-    height: 1px;
-    background: var(--rule);
-    margin: 56px 0;
-    opacity: 0;
-    animation: rise 0.8s ease 0.45s forwards;
-  }
+  .lead + .lead { margin-top: 18px; }
 
   .lead a {
-    color: var(--accent);
-    text-decoration: none;
-    border-bottom: 1px solid var(--rule);
-    transition: border-color 0.2s ease;
+    color: var(--ink);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+    text-decoration-color: var(--rule);
+    transition: text-decoration-color 0.2s ease, color 0.2s ease;
   }
 
   .lead a:hover {
-    border-bottom-color: var(--accent);
+    color: var(--navy);
+    text-decoration-color: var(--navy);
   }
 
-  .work {
-    opacity: 0;
-    animation: rise 0.8s ease 0.5s forwards;
-  }
+  section { margin-top: 80px; }
 
-  .work h2 {
-    font-family: 'DM Sans', sans-serif;
+  .label {
+    font-family: 'IBM Plex Mono', monospace;
     font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 0.12em;
+    font-weight: 500;
+    letter-spacing: 0.18em;
     text-transform: uppercase;
     color: var(--stone);
-    margin-bottom: 28px;
+    margin-bottom: 8px;
   }
 
-  .work-list {
-    list-style: none;
-  }
-
-  .work-item {
+  .case {
     display: block;
     text-decoration: none;
-    padding: 20px 0;
+    padding: 26px 0 30px;
     border-bottom: 1px solid var(--rule);
-    transition: padding-left 0.2s ease;
   }
 
-  .work-item:first-child {
-    border-top: 1px solid var(--rule);
-  }
+  .work .case:first-of-type { border-top: 1px solid var(--rule); }
 
-  .work-item:hover {
-    padding-left: 8px;
-  }
-
-  .work-item:hover .work-name {
-    color: var(--accent);
-  }
-
-  .work-item:hover .arrow {
-    opacity: 1;
-    transform: translateX(0);
-  }
-
-  .work-header {
+  .case-header {
     display: flex;
     justify-content: space-between;
     align-items: baseline;
+    gap: 16px;
+    margin-bottom: 14px;
   }
 
-  .work-name {
-    font-family: 'DM Serif Display', serif;
-    font-size: 20px;
-    font-weight: 400;
+  .case h3 {
+    font-size: 23px;
+    font-weight: 500;
     color: var(--ink);
     transition: color 0.2s ease;
   }
 
-  .work-domain {
-    display: flex;
-    align-items: baseline;
-    gap: 6px;
-    font-size: 14px;
-    color: var(--accent);
-    text-decoration: underline;
-    text-underline-offset: 3px;
-    text-decoration-color: var(--rule);
+  .case:hover h3 { color: var(--navy); }
+
+  .domain {
+    font-size: 12px;
+    color: var(--stone);
+    white-space: nowrap;
+    transition: color 0.2s ease;
   }
 
-  .work-item:hover .work-domain {
-    text-decoration-color: var(--accent);
-  }
+  .case:hover .domain { color: var(--navy); }
 
   .arrow {
+    display: inline-block;
     opacity: 0;
     transform: translateX(-4px);
-    transition: opacity 0.2s ease, transform 0.2s ease;
-    font-size: 13px;
+    transition: opacity 0.18s ease, transform 0.18s ease;
   }
 
-  .work-desc {
-    font-size: 15px;
-    line-height: 1.5;
-    color: var(--stone);
-    margin-top: 6px;
-  }
+  .case:hover .arrow { opacity: 1; transform: translateX(0); }
 
-  .case-label {
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--stone);
-    margin-top: 12px;
-  }
-
-  .case-text {
-    font-size: 15px;
-    line-height: 1.7;
-    color: var(--stone);
-    margin-top: 2px;
-  }
-
-  .contact {
-    margin-top: 56px;
-    opacity: 0;
-    animation: rise 0.8s ease 0.7s forwards;
-  }
-
-  .contact h2 {
-    font-family: 'DM Sans', sans-serif;
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--stone);
-    margin-bottom: 16px;
-  }
-
-  .contact a {
-    font-size: 17px;
-    color: var(--accent);
-    text-decoration: none;
-    border-bottom: 1px solid transparent;
-    transition: border-color 0.2s ease;
-  }
-
-  .contact a:hover {
-    border-bottom-color: var(--accent);
-  }
-
-  .schedule-link {
+  .case dl > div {
+    display: grid;
+    grid-template-columns: 88px 1fr;
+    gap: 18px;
     margin-top: 10px;
-    font-size: 15px;
+  }
+
+  .case dt {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10.5px;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--stone);
+    padding-top: 5px;
+  }
+
+  .case dd {
+    font-size: 16px;
+    line-height: 1.6;
     color: var(--stone);
   }
 
-  .schedule-link a {
-    font-size: 15px;
+  @media (max-width: 540px) {
+    .case dl > div { grid-template-columns: 1fr; gap: 2px; }
+    .case dt { padding-top: 0; }
   }
+
+  .contact a.email {
+    font-size: 21px;
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 1px solid var(--rule);
+    transition: color 0.2s ease, border-color 0.2s ease;
+  }
+
+  .contact a.email:hover {
+    color: var(--navy);
+    border-bottom-color: var(--navy);
+  }
+
+  .schedule {
+    margin-top: 16px;
+    font-size: 16px;
+    font-style: italic;
+    color: var(--stone);
+  }
+
+  .schedule a {
+    color: var(--navy);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+    text-decoration-color: var(--rule);
+    transition: text-decoration-color 0.2s ease;
+  }
+
+  .schedule a:hover { text-decoration-color: var(--navy); }
 
   .footer {
-    margin-top: 80px;
-    font-size: 13px;
+    margin-top: 96px;
+    padding-top: 20px;
+    border-top: 1px solid var(--rule);
+    font-size: 11px;
+    letter-spacing: 0.06em;
     color: var(--stone);
-    opacity: 0;
-    animation: rise 0.8s ease 0.85s forwards;
-  }
-
-  @keyframes rise {
-    from { opacity: 0; transform: translateY(12px); }
-    to { opacity: 1; transform: translateY(0); }
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
   }
 </style>
 </head>
 <body>
-  <div class="page">
+  <main class="page">
     <div class="mark">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 80" role="img" aria-label="Wardwell Labs">
-        <text x="0" y="56" font-family="'DM Serif Display', Georgia, serif" font-size="52" fill="#1a3a5c" letter-spacing="-2">WL</text>
-        <line x1="82" y1="16" x2="82" y2="60" stroke="var(--rule)" stroke-width="1.5"/>
-        <text x="96" y="38" font-family="'DM Sans', Helvetica, sans-serif" font-size="16" font-weight="500" fill="#1a3a5c" letter-spacing="3">WARDWELL</text>
-        <text x="96" y="58" font-family="'DM Sans', Helvetica, sans-serif" font-size="16" font-weight="500" fill="var(--stone)" letter-spacing="3">LABS</text>
+        <text x="0" y="56" font-family="'Newsreader', Georgia, serif" font-size="54" font-weight="500" fill="#1b2a4a" letter-spacing="-2">WL</text>
+        <line x1="84" y1="16" x2="84" y2="60" stroke="#ddd7ca" stroke-width="1.5"/>
+        <text x="100" y="38" font-family="'IBM Plex Mono', monospace" font-size="15" font-weight="500" fill="#1b2a4a" letter-spacing="4">WARDWELL</text>
+        <text x="100" y="58" font-family="'IBM Plex Mono', monospace" font-size="15" font-weight="500" fill="#6e675a" letter-spacing="4">LABS</text>
       </svg>
     </div>
 
-    <h1>We build custom software platforms for businesses that depend on them.</h1>
+    <h1>We build custom software platforms for businesses that <em>depend</em> on them.</h1>
 
     <p class="lead">
-      Wardwell Labs is a software consultancy based in New York. We specialize in 
-      building, modernizing, and maintaining business-critical applications — the 
+      Wardwell Labs is a software consultancy based in New York. We specialize in
+      building, modernizing, and maintaining business-critical applications — the
       systems your team uses every day and your customers rely on.
     </p>
 
     <p class="lead">
-      Founded by <a href="https://jackschuss.com">Jack Schuss</a>, a principal engineer and technology leader
-      with over a decade of experience building software products. We bring
-      production-grade thinking to every engagement.
+      Founded by <a href="https://jackschuss.com">Jack Schuss</a>, a principal engineer
+      and technology leader with over a decade of experience building software products.
+      We bring production-grade thinking to every engagement.
     </p>
 
-    <div class="divider"></div>
-
-    <div class="work">
-      <h2>Selected Work</h2>
-      <div class="work-list">
-        <a class="work-item" href="https://shulops.com" target="_blank">
-          <div class="work-header">
-            <span class="work-name">ShulOps</span>
-            <span class="work-domain">shulops.com <span class="arrow">&rarr;</span></span>
+    <section class="work">
+      <h2 class="label">Selected Work</h2>
+      <a class="case" href="https://shulops.com" target="_blank" rel="noopener">
+        <div class="case-header">
+          <h3>ShulOps</h3>
+          <span class="domain mono">shulops.com <span class="arrow">&rarr;</span></span>
+        </div>
+        <dl>
+          <div>
+            <dt>Problem</dt>
+            <dd>Shuls run on volunteers, and volunteers burn out. Event details come in on WhatsApp, dues are tracked in someone's head, and the weekly flyer takes an hour every Thursday.</dd>
           </div>
-          <p class="case-label">Problem</p>
-          <p class="case-text">Shuls run on volunteers, and volunteers burn out. Event details come in on WhatsApp, dues are tracked in someone's head, and the weekly flyer takes an hour every Thursday.</p>
-          <p class="case-label">What we built</p>
-          <p class="case-text">An AI layer that watches all of it — ingests the messages, keeps the data straight, and drafts the announcements before anyone has to ask.</p>
-          <p class="case-label">Result</p>
-          <p class="case-text">Takes five minutes to set up and runs every day — nothing falls through the cracks.</p>
-        </a>
-        <a class="work-item" href="https://keepsight.io" target="_blank">
-          <div class="work-header">
-            <span class="work-name">KeepSight</span>
-            <span class="work-domain">keepsight.io <span class="arrow">&rarr;</span></span>
+          <div>
+            <dt>Built</dt>
+            <dd>An AI layer that watches all of it — ingests the messages, keeps the data straight, and drafts the announcements before anyone has to ask.</dd>
           </div>
-          <p class="case-label">Problem</p>
-          <p class="case-text">Small ABA practices were losing almost half their leads during intake — not because they didn't care, but because nobody could see what was falling behind. Clinical software handles billing, not coordination.</p>
-          <p class="case-label">What we built</p>
-          <p class="case-text">The coordination layer. Intake tracking, caseload visibility, flags for anything going stale.</p>
-          <p class="case-label">Result</p>
-          <p class="case-text">First clinic was up in a week with staff capacity and lead drop-off visible for the first time.</p>
-        </a>
-        <a class="work-item" href="https://wardwell.dev" target="_blank">
-          <div class="work-header">
-            <span class="work-name">Wardwell</span>
-            <span class="work-domain">wardwell.dev <span class="arrow">&rarr;</span></span>
+          <div>
+            <dt>Result</dt>
+            <dd>Takes five minutes to set up and runs every day — nothing falls through the cracks.</dd>
           </div>
-          <p class="case-label">Problem</p>
-          <p class="case-text">AI coding tools start from scratch every session. No memory of what you decided last week, what broke, or why you chose one approach over another.</p>
-          <p class="case-label">What we built</p>
-          <p class="case-text">A memory layer — a Rust CLI that stores decisions, history, and project state in plain text, and loads it all back in automatically.</p>
-          <p class="case-label">Result</p>
-          <p class="case-text">Source-available under the Business Source License, and every session picks up where the last one left off.</p>
-        </a>
-      </div>
-    </div>
+        </dl>
+      </a>
+      <a class="case" href="https://keepsight.io" target="_blank" rel="noopener">
+        <div class="case-header">
+          <h3>KeepSight</h3>
+          <span class="domain mono">keepsight.io <span class="arrow">&rarr;</span></span>
+        </div>
+        <dl>
+          <div>
+            <dt>Problem</dt>
+            <dd>Small ABA practices were losing almost half their leads during intake — not because they didn't care, but because nobody could see what was falling behind. Clinical software handles billing, not coordination.</dd>
+          </div>
+          <div>
+            <dt>Built</dt>
+            <dd>The coordination layer. Intake tracking, caseload visibility, flags for anything going stale.</dd>
+          </div>
+          <div>
+            <dt>Result</dt>
+            <dd>First clinic was up in a week with staff capacity and lead drop-off visible for the first time.</dd>
+          </div>
+        </dl>
+      </a>
+      <a class="case" href="https://wardwell.dev" target="_blank" rel="noopener">
+        <div class="case-header">
+          <h3>Wardwell</h3>
+          <span class="domain mono">wardwell.dev <span class="arrow">&rarr;</span></span>
+        </div>
+        <dl>
+          <div>
+            <dt>Problem</dt>
+            <dd>AI coding tools start from scratch every session. No memory of what you decided last week, what broke, or why you chose one approach over another.</dd>
+          </div>
+          <div>
+            <dt>Built</dt>
+            <dd>A memory layer — a Rust CLI that stores decisions, history, and project state in plain text, and loads it all back in automatically.</dd>
+          </div>
+          <div>
+            <dt>Result</dt>
+            <dd>Source-available under the Business Source License, and every session picks up where the last one left off.</dd>
+          </div>
+        </dl>
+      </a>
+    </section>
 
-    <div class="contact">
-      <h2>Get in Touch</h2>
-      <a href="mailto:jack@wardwell-labs.com">jack@wardwell-labs.com</a>
-      <p class="schedule-link">or <a href="https://cal.com/jackschuss/wardwell-labs-intro" target="_blank">book a time directly</a></p>
-    </div>
+    <section class="contact">
+      <h2 class="label">Get in Touch</h2>
+      <a class="email" href="mailto:jack@wardwell-labs.com">jack@wardwell-labs.com</a>
+      <p class="schedule">or <a href="https://cal.com/jackschuss/wardwell-labs-intro" target="_blank" rel="noopener">book a time directly</a></p>
+    </section>
 
-    <div class="footer">
-      &copy; 2026 Wardwell Labs LLC. Hewlett, New York.
-    </div>
-  </div>
+    <footer class="footer mono">
+      <span>&copy; 2026 Wardwell Labs LLC</span>
+      <span>Hewlett, New York</span>
+    </footer>
+  </main>
 </body>
 </html>
