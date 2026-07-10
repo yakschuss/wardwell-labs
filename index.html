@@ -15,10 +15,11 @@
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400;1,6..72,500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root {
-    --paper: #f7f5f0;
+    --paper: #F6F3EE;   /* Wardwell cream */
     --ink: #211e19;
     --stone: #6e675a;
-    --navy: #1b2a4a;
+    --navy: #22303F;    /* Wardwell navy */
+    --ember: #C36A2E;   /* Wardwell ember — one dot per view */
     --rule: #ddd7ca;
   }
 
@@ -188,13 +189,13 @@
     font-size: 21px;
     color: var(--ink);
     text-decoration: none;
-    border-bottom: 1px solid var(--rule);
+    border-bottom: 1px solid var(--ember);
     transition: color 0.2s ease, border-color 0.2s ease;
   }
 
   .contact a.email:hover {
-    color: var(--navy);
-    border-bottom-color: var(--navy);
+    color: var(--ember);
+    border-bottom-color: var(--ember);
   }
 
   .schedule {
@@ -215,8 +216,38 @@
 
   .schedule a:hover { text-decoration-color: var(--navy); }
 
+  .makers {
+    margin-top: 80px;
+    padding-top: 30px;
+    border-top: 1px solid var(--rule);
+  }
+
+  .makers a {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: var(--stone);
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+    letter-spacing: 0.04em;
+    transition: color 0.2s ease;
+  }
+
+  .makers a:hover { color: var(--navy); }
+
+  .makers svg {
+    height: 22px;
+    width: auto;
+    display: block;
+    flex-shrink: 0;
+  }
+
+  .makers .made { color: var(--stone); }
+  .makers .product { color: var(--navy); font-weight: 500; }
+
   .footer {
-    margin-top: 96px;
+    margin-top: 64px;
     padding-top: 20px;
     border-top: 1px solid var(--rule);
     font-size: 11px;
@@ -232,9 +263,9 @@
   <main class="page">
     <div class="mark">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 80" role="img" aria-label="Wardwell Labs">
-        <text x="0" y="56" font-family="'Newsreader', Georgia, serif" font-size="54" font-weight="500" fill="#1b2a4a" letter-spacing="-2">WL</text>
+        <text x="0" y="56" font-family="'Newsreader', Georgia, serif" font-size="54" font-weight="500" fill="#22303F" letter-spacing="-2">WL</text>
         <line x1="84" y1="16" x2="84" y2="60" stroke="#ddd7ca" stroke-width="1.5"/>
-        <text x="100" y="38" font-family="'IBM Plex Mono', monospace" font-size="15" font-weight="500" fill="#1b2a4a" letter-spacing="4">WARDWELL</text>
+        <text x="100" y="38" font-family="'IBM Plex Mono', monospace" font-size="15" font-weight="500" fill="#22303F" letter-spacing="4">WARDWELL</text>
         <text x="100" y="58" font-family="'IBM Plex Mono', monospace" font-size="15" font-weight="500" fill="#6e675a" letter-spacing="4">LABS</text>
       </svg>
     </div>
@@ -322,6 +353,17 @@
       <a class="email" href="mailto:jack@wardwell-labs.com">jack@wardwell-labs.com</a>
       <p class="schedule">or <a href="https://cal.com/jackschuss/wardwell-labs-intro" target="_blank" rel="noopener">book a time directly</a></p>
     </section>
+
+    <div class="makers">
+      <a href="https://wardwell.dev" target="_blank" rel="noopener" aria-label="Makers of Wardwell — wardwell.dev">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 190 90" role="img" aria-hidden="true">
+          <rect x="5" y="5" width="64" height="80" rx="16" fill="#22303F"/>
+          <rect x="121" y="5" width="64" height="80" rx="16" fill="#22303F"/>
+          <circle cx="95" cy="45" r="16" fill="#C36A2E"/>
+        </svg>
+        <span><span class="made">Makers of</span> <span class="product">Wardwell</span></span>
+      </a>
+    </div>
 
     <footer class="footer mono">
       <span>&copy; 2026 Wardwell Labs LLC</span>
