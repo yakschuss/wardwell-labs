@@ -120,7 +120,7 @@
     border-bottom: 1px solid var(--rule);
   }
 
-  .work .case:first-of-type { border-top: 1px solid var(--rule); }
+  .work .label + .case { border-top: 1px solid var(--rule); }
 
   .case-header {
     display: flex;
@@ -137,7 +137,7 @@
     transition: color 0.2s ease;
   }
 
-  .case:hover h3 { color: var(--navy); }
+  a.case:hover h3 { color: var(--navy); }
 
   .domain {
     font-size: 12px;
@@ -146,7 +146,7 @@
     transition: color 0.2s ease;
   }
 
-  .case:hover .domain { color: var(--navy); }
+  a.case:hover .domain { color: var(--navy); }
 
   .arrow {
     display: inline-block;
@@ -306,10 +306,10 @@
           </div>
         </dl>
       </a>
-<a class="case" href="https://shulops.com" target="_blank" rel="noopener">
+<div class="case">
         <div class="case-header">
           <h3>ShulOps</h3>
-          <span class="domain mono">shulops.com <span class="arrow">&rarr;</span></span>
+          <span class="domain mono">2026 · retired</span>
         </div>
         <dl>
           <div>
@@ -320,16 +320,12 @@
             <dt>Built</dt>
             <dd>An AI layer that watches all of it — ingests the messages, keeps the data straight, and drafts the announcements before anyone has to ask.</dd>
           </div>
-          <div>
-            <dt>Result</dt>
-            <dd>Takes five minutes to set up and runs every day — nothing falls through the cracks.</dd>
-          </div>
         </dl>
-      </a>
-      <a class="case" href="https://keepsight.io" target="_blank" rel="noopener">
+      </div>
+      <div class="case">
         <div class="case-header">
           <h3>KeepSight</h3>
-          <span class="domain mono">keepsight.io <span class="arrow">&rarr;</span></span>
+          <span class="domain mono">2026 · retired</span>
         </div>
         <dl>
           <div>
@@ -340,12 +336,8 @@
             <dt>Built</dt>
             <dd>The coordination layer. Intake tracking, caseload visibility, flags for anything going stale.</dd>
           </div>
-          <div>
-            <dt>Result</dt>
-            <dd>First clinic was up in a week with staff capacity and lead drop-off visible for the first time.</dd>
-          </div>
         </dl>
-      </a>
+      </div>
           </section>
 
     <section class="contact">
